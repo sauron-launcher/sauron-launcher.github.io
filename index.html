@@ -3,46 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Unavailable</title>
+    <title>Page not found · GitHub</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f7f9fa;
-            color: #333;
+            background-color: #0b1015;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        /* Simulated space/stars background layer */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 40px 60px;
+            opacity: 0.4;
+            z-index: 1;
+        }
+        .wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+        }
+        /* Main error badge illustration placeholder */
+        .illustration-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            margin-bottom: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
-        .container {
-            text-align: center;
-            max-width: 450px;
-            padding: 20px;
+        .octocat-space {
+            font-size: 120px;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
         }
         h1 {
-            font-size: 24px;
-            color: #2c3e50;
-            margin-bottom: 10px;
+            font-size: 56px;
+            font-weight: 300;
+            margin: 0 0 10px 0;
+            color: #f0f6fc;
         }
         p {
-            font-size: 14px;
-            color: #7f8c8d;
-            line-height: 1.6;
+            font-size: 20px;
+            color: #8b949e;
+            margin: 0 0 30px 0;
         }
-        .icon {
-            font-size: 48px;
-            color: #bdc3c7;
-            margin-bottom: 20px;
+        /* Search bar layout styling */
+        .search-container {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 15px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+        .search-input {
+            background: transparent;
+            border: none;
+            color: #f0f6fc;
+            font-size: 16px;
+            width: 100%;
+            outline: none;
+        }
+        .search-button {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #30363d;
+            border-color: #8b949e;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="icon">🔒</div>
-    <h1>This site can’t be reached</h1>
-    <p>The connection was refused or the site is currently undergoing scheduled maintenance. Please try again later.</p>
+<div class="wrapper">
+    <div class="illustration-container">
+        <!-- Floating placeholder icon representing the space theme -->
+        <div class="octocat-space">🐱‍🚀</div>
+    </div>
+    <h1>404</h1>
+    <p>This is not the web page you are looking for.</p>
+    
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search GitHub" aria-label="Search GitHub">
+        <button class="search-button">Find</button>
+    </div>
 </div>
 
 </body>
